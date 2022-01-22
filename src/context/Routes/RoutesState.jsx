@@ -7,12 +7,12 @@ const RoutesState = (props) => {
   const initialState = {
     routes: [
       {
-        to: "/",
+        to: "dashboard",
         icon: cilSpeedometer,
         name: "Dashboard",
       },
       {
-        to: "/test",
+        to: "test",
         icon: cilSpeedometer,
         name: "Test",
       },
