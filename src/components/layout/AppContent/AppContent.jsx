@@ -6,17 +6,15 @@ import Test from "../../pages/app/Test/Test";
 
 function AppContent() {
   return (
-    <div className='bg-neutral-200 h-screen -z-10'>
-      <CContainer className='pt-3' lg>
-        <Suspense fallback={<CSpinner color='primary' />}>
-          <Routes>
-            <Route path='dashboard' element={<Dashboard />} />
-            <Route path='test' element={<Test />} />
-            <Route path='*' element={<Navigate to='dashboard' />} />
-          </Routes>
-        </Suspense>
-      </CContainer>
-    </div>
+    <CContainer className='pt-3' lg>
+      <Suspense fallback={<CSpinner color='primary' />}>
+        <Routes>
+          <Route path='dashboard' element={<Dashboard />} />
+          <Route path='test' element={<Test />} />
+          <Route path='*' element={<Navigate to='dashboard' />} />
+        </Routes>
+      </Suspense>
+    </CContainer>
   );
 }
 

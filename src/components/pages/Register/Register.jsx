@@ -5,8 +5,9 @@ import { Link } from "react-router-dom";
 const Register = () => {
   const [data, setData] = useState({
     email: "",
-
+    name:"",
     password: "",
+    repeatPassword: "",
   });
 
   return (
@@ -38,7 +39,7 @@ const Register = () => {
               <input
                 required
                 placeholder=' '
-                onChange={(e) => setData({ ...data, email: e.target.value })}
+                onChange={(e) => setData({ ...data, name: e.target.value })}
                 type={"text"}
                 className=' form-input w-full border-t-0 border-x-0 border-b-2  outline-none shadow-none'
               />
@@ -91,7 +92,7 @@ const Register = () => {
                 required
                 minLength='6'
                 placeholder=' '
-                onChange={(e) => setData({ ...data, password: e.target.value })}
+                onChange={(e) => setData({ ...data, repeatPassword: e.target.value })}
                 type='password'
                 className=' form-input w-full border-t-0 border-x-0 border-b-2  outline-none shadow-none'
               />

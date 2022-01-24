@@ -11,6 +11,78 @@ function Dashboard() {
         <CCardHeader>Dashboard Card</CCardHeader>
         <CCardBody>Dashboard Card Body</CCardBody>
       </CCard>
+      <CCard>
+        <CCardHeader>Dashboard Card</CCardHeader>
+        <CCardBody>Dashboard Card Body</CCardBody>
+      </CCard>
+      <CCard className='my-3'>
+        <CCardHeader>Dashboard Card</CCardHeader>
+        <CCardBody>Dashboard Card Body</CCardBody>
+      </CCard>
+      <CCard>
+        <CCardHeader>Dashboard Card</CCardHeader>
+        <CCardBody>Dashboard Card Body</CCardBody>
+      </CCard>
+      <CCard className='my-3'>
+        <CCardHeader>Dashboard Card</CCardHeader>
+        <CCardBody>Dashboard Card Body</CCardBody>
+      </CCard>
+      <CCard>
+        <CCardHeader>Dashboard Card</CCardHeader>
+        <CCardBody>Dashboard Card Body</CCardBody>
+      </CCard>
+      <CCard className='my-3'>
+        <CCardHeader>Dashboard Card</CCardHeader>
+        <CCardBody>Dashboard Card Body</CCardBody>
+      </CCard>
+      <CCard>
+        <CCardHeader>Dashboard Card</CCardHeader>
+        <CCardBody>Dashboard Card Body</CCardBody>
+      </CCard>
+      <CCard className='my-3'>
+        <CCardHeader>Dashboard Card</CCardHeader>
+        <CCardBody>Dashboard Card Body</CCardBody>
+      </CCard>
+      <CCard>
+        <CCardHeader>Dashboard Card</CCardHeader>
+        <CCardBody>Dashboard Card Body</CCardBody>
+      </CCard>
+      <CCard className='my-3'>
+        <CCardHeader>Dashboard Card</CCardHeader>
+        <CCardBody>Dashboard Card Body</CCardBody>
+      </CCard>
+      <CCard>
+        <CCardHeader>Dashboard Card</CCardHeader>
+        <CCardBody>Dashboard Card Body</CCardBody>
+      </CCard>
+      <CCard className='my-3'>
+        <CCardHeader>Dashboard Card</CCardHeader>
+        <CCardBody>Dashboard Card Body</CCardBody>
+      </CCard>
+      <CCard>
+        <CCardHeader>Dashboard Card</CCardHeader>
+        <CCardBody>Dashboard Card Body</CCardBody>
+      </CCard>
+      <CCard className='my-3'>
+        <CCardHeader>Dashboard Card</CCardHeader>
+        <CCardBody>Dashboard Card Body</CCardBody>
+      </CCard>
+      <CCard>
+        <CCardHeader>Dashboard Card</CCardHeader>
+        <CCardBody>Dashboard Card Body</CCardBody>
+      </CCard>
+      <CCard className='my-3'>
+        <CCardHeader>Dashboard Card</CCardHeader>
+        <CCardBody>Dashboard Card Body</CCardBody>
+      </CCard>
+      <CCard>
+        <CCardHeader>Dashboard Card</CCardHeader>
+        <CCardBody>Dashboard Card Body</CCardBody>
+      </CCard>
+      <CCard className='my-3'>
+        <CCardHeader>Dashboard Card</CCardHeader>
+        <CCardBody>Dashboard Card Body</CCardBody>
+      </CCard>
     </div>
   );
 }
