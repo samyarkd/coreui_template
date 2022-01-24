@@ -8,9 +8,12 @@ import {
   CDropdownMenu,
   CDropdownToggle,
 } from "@coreui/react";
-import React from "react";
+import React, { useContext } from "react";
+import AuthContext from "../../../context/auth/AuthContext";
 
 function HeaderDropDown() {
+  const { logout } = useContext(AuthContext);
+
   return (
     <CDropdown variant='nav-item'>
       <CDropdownToggle placement='bottom-end' className='py-0' caret={false}>
@@ -21,7 +24,13 @@ function HeaderDropDown() {
           Name
         </CDropdownHeader>
 
-        <CDropdownItem className='mt-1' href='#'>
+        <CDropdownItem
+          onClick={() => {
+            logout();
+          }}
+          className='mt-1'
+          href='#'
+        >
           Logout
           <CIcon icon={cilAccountLogout} className='me-2' />
         </CDropdownItem>

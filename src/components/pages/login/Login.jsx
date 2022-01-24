@@ -1,12 +1,37 @@
-import { CCard, CCardBody } from "@coreui/react";
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+/* eslint-disable react-hooks/exhaustive-deps */
+import { CCard, CCardBody, CSpinner } from "@coreui/react";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import AuthContext from "../../../context/auth/AuthContext";
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const [data, setData] = useState({
     email: "",
     password: "",
   });
+  const { email, password } = data;
+
+  const { login, loading } = useContext(AuthContext);
+
+  function loginHandler(e) {
+    e.preventDefault();
+    if (email === "" || password === "") {
+      alert("Please fill out all fields !! ");
+    } else {
+      login({
+        email,
+        password,
+      });
+    }
+  }
+
+  useEffect(() => {
+    if (localStorage.token) {
+      navigate("/app/dashboard");
+    }
+  }, []);
 
   return (
     // login form
@@ -33,7 +58,7 @@ const Login = () => {
             </span>
           </div>
           {/* From */}
-          <form>
+          <form onSubmit={loginHandler}>
             {/* Email input */}
             <div className='mb-5 my-3 input-div'>
               <input
@@ -60,6 +85,7 @@ const Login = () => {
                 minLength='6'
                 type='password'
                 className='form-input w-full border-t-0 border-x-0 border-b-2  outline-none shadow-none'
+                onChange={(e) => setData({ ...data, password: e.target.value })}
               />
               <label className='input-label text-lg'>
                 {" "}
@@ -75,9 +101,10 @@ const Login = () => {
             </div>
             <button
               type='submit'
+              disabled={loading}
               className='w-full shadow-md shadow-blue-500 duration-100 active:scale-[0.97] bg-blue-600 text-white p-2 rounded hover:bg-blue-700'
             >
-              Login
+              {loading ? <CSpinner /> : "Login"}
             </button>
 
             <div className='my-3'>
