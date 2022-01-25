@@ -1,14 +1,41 @@
-import { CCard, CCardBody } from "@coreui/react";
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+/* eslint-disable react-hooks/exhaustive-deps */
+import { CCard, CCardBody, CSpinner } from "@coreui/react";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import AuthContext from "./../../../context/auth/AuthContext";
 
 const Register = () => {
+  const navigate = useNavigate();
   const [data, setData] = useState({
     email: "",
-    name:"",
+    name: "",
     password: "",
     repeatPassword: "",
   });
+  const { email, name, password, repeatPassword } = data;
+
+  const { register, loading } = useContext(AuthContext);
+
+  function registerHandler(e) {
+    e.preventDefault();
+    if (email === "" || password === "" || name === "") {
+      alert("Please fill out all fields !! ");
+    } else if (password === repeatPassword) {
+      register({
+        email,
+        name,
+        password,
+      });
+    } else {
+      alert("Passwords dos't match ");
+    }
+  }
+
+  useEffect(() => {
+    if (localStorage.token) {
+      navigate("/app/dashboard");
+    }
+  }, []);
 
   return (
     // Register Form
@@ -92,7 +119,9 @@ const Register = () => {
                 required
                 minLength='6'
                 placeholder=' '
-                onChange={(e) => setData({ ...data, repeatPassword: e.target.value })}
+                onChange={(e) =>
+                  setData({ ...data, repeatPassword: e.target.value })
+                }
                 type='password'
                 className=' form-input w-full border-t-0 border-x-0 border-b-2  outline-none shadow-none'
               />
@@ -107,9 +136,11 @@ const Register = () => {
             {/* Submit BTN */}
             <button
               type='submit'
+              disabled={loading}
+              onClick={registerHandler}
               className='w-full shadow-md shadow-blue-500 duration-100 active:scale-[0.97] bg-blue-600 text-white p-2 rounded hover:bg-blue-700'
             >
-              Register
+              {loading ? <CSpinner /> : "Register"}
             </button>
             <div className='my-3'>
               Already have an account?{" "}

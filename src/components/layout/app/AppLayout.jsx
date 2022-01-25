@@ -21,10 +21,10 @@ function AppLayout() {
   }, [isAuthenticated]);
 
   return (
-    <div className='flex flex-row-reverse items-start justify-start '>
+    <div className='flex flex-row-reverse '>
       <Sidebar />
       <div className='flex flex-col justify-between bg-neutral-200 w-full'>
-        <div>
+        <div className=''>
           <Header />
           <AppContent />
         </div>
