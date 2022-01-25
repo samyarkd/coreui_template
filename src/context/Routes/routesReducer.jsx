@@ -1,9 +1,9 @@
-import { TOGGLE_SIDEBAR } from "../types";
+import { SET_ROUTES } from "../types";
 
 export default function routesReducer(state, action) {
   switch (action.type) {
-    case TOGGLE_SIDEBAR:
-      return { visible: !state.visible };
+    case SET_ROUTES:
+      return { routes: action.payload, loading: false };
     default:
       return null;
   }

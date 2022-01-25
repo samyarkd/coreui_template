@@ -12,3 +12,6 @@ export const LOGOUT = "LOGOUT";
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
 export const REGISTER_LOAD = "REGISTER_LOAD";
 export const LOGIN_LOAD = "LOGIN_LOAD";
+
+// Routes
+export const SET_ROUTES = "SET_ROUTES";
